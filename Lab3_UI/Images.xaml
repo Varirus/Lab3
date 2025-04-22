@@ -1,0 +1,66 @@
+﻿<Window x:Class="Lab3_UI.Images"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab3_UI"
+        mc:Ignorable="d"
+        Title="Images" Height="570" Width="670"    
+        Background="Black">
+    
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!-- Buttons -->
+        <Button 
+            Grid.Row="0"
+            Grid.Column="0"
+            Content="Open File" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top" 
+            Margin="0,10,0,0" 
+            Click="OnOpenFileClicked" 
+            x:Name="OpenFileButton" 
+            FontSize="20" 
+            Height="50" 
+            Width="150" />
+        <Button 
+            Grid.Row="0"
+            Grid.Column="1"
+            Content="Convert" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Bottom" 
+            Margin="0,10,0,0" 
+            Click="OnStartConvertionClicked" 
+            x:Name="StartConvertionWindow" 
+            FontSize="20" 
+            Height="50" 
+            Width="150" />
+        <Button 
+            Grid.Row="2"
+            Content="Go to Matrixes" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Bottom" 
+            Margin="0,10,0,0" 
+            Click="OnOpenMatrixesWindowClicked" 
+            x:Name="OpenMatrixesWindow" 
+            FontSize="20" 
+            Height="50" 
+            Width="150" />
+        <!-- Pictures -->
+        <Image Grid.Row="1" Grid.Column="0" x:Name="SourceImageView" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="0,10,0,0" />
+        <Image Grid.Row="1" Grid.Column="1" x:Name="ImageAfterOperation1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="0,10,0,0" />
+        <Image Grid.Row="2" Grid.Column="1" x:Name="ImageAfterOperation2" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="0,10,0,0" />
+        <Image Grid.Row="1" Grid.Column="2" x:Name="ImageAfterOperation3" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="0,10,0,0" />
+        <Image Grid.Row="2" Grid.Column="2" x:Name="ImageAfterOperation4" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="0,10,0,0" />
+    </Grid>
+</Window>

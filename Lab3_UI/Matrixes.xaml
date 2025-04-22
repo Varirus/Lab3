@@ -1,0 +1,187 @@
+﻿<Window x:Class="Lab3_UI.Matrixes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Lab3_UI"
+        mc:Ignorable="d"
+        Title="Matrixes" Height="570" Width="670"
+        Background="Black">
+   
+    <Grid Margin="20" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <!-- Entries -->
+        <Grid Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Column="0"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" 
+                Margin="0,10,0,0" 
+                Visibility="Visible" 
+                FontSize="20" 
+                Foreground="White" >
+                <TextBlock Text="Size:" />
+            </Label>
+            <TextBox
+                Grid.Column="1"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" 
+                Margin="0,10,10,0" 
+                Visibility="Visible" 
+                x:Name="sizeEntry" 
+                materialDesign:HintAssist.Hint="434"
+                TextAlignment="Center"
+                FontSize="20" 
+                Height="40" 
+                Width="40" />
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Column="0"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" 
+                Margin="0,10,0,0" 
+                Visibility="Visible" 
+                FontSize="20" 
+                Foreground="White" >
+                <TextBlock Text="Threads:" />
+            </Label>
+            <TextBox
+                Grid.Column="1"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" 
+                Margin="0,10,10,0" 
+                Visibility="Visible" 
+                x:Name="threadsEntry" 
+                materialDesign:HintAssist.Hint="434"
+                TextAlignment="Center"
+                FontSize="20" 
+                Height="40" 
+                Width="40" />
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Column="0"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" 
+                Margin="0,10,0,0" 
+                Visibility="Visible" 
+                FontSize="20" 
+                Foreground="White" >
+                <TextBlock Text="Seed:" />
+            </Label>
+            <TextBox
+                Grid.Column="1"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" 
+                Margin="0,10,10,0" 
+                Visibility="Visible" 
+                x:Name="seedEntry" 
+                materialDesign:HintAssist.Hint="434"
+                TextAlignment="Center"
+                FontSize="20" 
+                Height="40" 
+                Width="40" />
+        </Grid>
+        <!-- Buttons -->
+        <Button 
+            Grid.Row="3"
+            Grid.Column="0"
+            Content="Generate Instance" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Bottom" 
+            Margin="0,10,10,0" 
+            Click="OnGenerateInstanceClicked" 
+            x:Name="GenerateInstanceButton" 
+            FontSize="20" 
+            Height="50" 
+            Width="170" />
+        <Button 
+            Grid.Row="0"
+            Grid.Column="1"
+            Content="Open Matrix A" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Bottom" 
+            Visibility="Collapsed"
+            Margin="0,10,0,0" 
+            Click="OnOpenMatrixAClicked" 
+            x:Name="OpenMatrixAButton" 
+            FontSize="20" 
+            Height="50" 
+            Width="190" />
+        <Button 
+            Grid.Row="1"
+            Grid.Column="1"
+            Content="Open Matrix B" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Bottom" 
+            Margin="0,10,0,0" 
+            Visibility="Collapsed"
+            Click="OnOpenMatrixBClicked" 
+            x:Name="OpenMatrixBButton" 
+            FontSize="20" 
+            Height="50" 
+            Width="190" />
+        <Button 
+            Grid.Row="2"
+            Grid.Column="1"
+            Content="Open Threads Result" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Bottom" 
+            Visibility="Collapsed"
+            Margin="0,10,0,0" 
+            Click="OnOpenMatrixResultThreadsClicked" 
+            x:Name="OpenMatrixResultThreadsButton" 
+            FontSize="20" 
+            Height="50" 
+            Width="190" />
+        <Button 
+            Grid.Row="3"
+            Grid.Column="1"
+            Content="Open Parallel Result" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Bottom" 
+            Visibility="Collapsed"
+            Margin="0,10,0,0" 
+            Click="OnOpenMatrixResultParallelClicked" 
+            x:Name="OpenMatrixResultParallelButton" 
+            FontSize="20" 
+            Height="50" 
+            Width="190" />
+        <Button 
+            Grid.Row="4"
+            Grid.Column="0"
+            Content="Go to Images" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Bottom" 
+            Margin="0,10,0,0" 
+            Click="OnOpenImagesWindowClicked" 
+            x:Name="OpenImagesWindowButton" 
+            FontSize="20" 
+            Height="50" 
+            Width="150" />
+    </Grid>
+</Window>
