@@ -12,7 +12,7 @@ namespace Lab3
     {
         static void Main(string[] args)
         {
-            int[] matrixSizes = {100, 200, 300, 500 , 1000, 1200, 1300};
+            int[] matrixSizes = {300, 500 , 1000, 1200, 1300};
             int[] threadCounts = {2, 4, 8, 16, 32, 64, 128, 256, 512};
 
             Console.WriteLine("Benchmark");
@@ -38,8 +38,8 @@ namespace Lab3
                 Console.WriteLine($"{"",13} | {"Parallel",37} | {"Threads",37}");
                 Console.Write("----------------------------------------");
                 Console.WriteLine("-----------------------------------------------------");
-                Console.Write("Threads | Time Parallel (ms) | SpeedUp | ");
-                Console.WriteLine("Time Threads (ms) | SpeedUp");
+                Console.Write($"{"Threads",13} | {"Time Parallel (ms)",20} |{" SpeedUp",15} | ");
+                Console.WriteLine($"{"Time Threads (ms)", 19}  | {"SpeedUp", 14}");
                 Console.Write("----------------------------------------");
                 Console.WriteLine("-----------------------------------------------------");
 
